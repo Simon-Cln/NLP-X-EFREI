@@ -1,4 +1,4 @@
-<img src="https://github.com/Simon-Cln/NLP-X-EFREI/raw/main/automated_fact_checking.gif" width="800"/>
+<img src="https://github.com/Simon-Cln/NLP-X-EFREI/raw/main/automated_fack_checking.gif" width="800"/>
 
 # NLP-X-EFREI
 
