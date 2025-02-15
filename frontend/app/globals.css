@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/otf/Geist-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist-SemiBold';
+  src: url('/otf/Geist-SemiBold.otf') format('opentype');
+}
+
+:root {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --text-blue: oklch(0.717 0.1648 250.794);
+  --text-purple: oklch(0.6987 0.2037 309.51);
+  --geist-background: #fff;
+  --ds-gray-alpha-400: rgba(0, 0, 0, 0.1);
+  --avatar-size: 24px;
+  --geist-icon-size: 16px;
+}
+
+.grid_block {
+  --sm-grid-row: 3 / span 1;
+  --sm-grid-column: 1/-1;
+  --sm-cell-rows: 1;
+  --sm-cell-columns: -2;
+  padding: 0;
+}
+
+.stack_stack {
+  --stack-flex: initial;
+  --stack-direction: column;
+  --stack-align: center;
+  --stack-justify: center;
+  --stack-padding: 0px;
+  --stack-gap: 0px;
+}
+
+.author-avatar-group_avatars {
+  position: relative;
+  padding: 20px;
+  margin: -20px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.author-avatar-group_mobile-button {
+  line-height: 0;
+  position: absolute !important;
+  width: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
+  height: 100% !important;
+}
+
+@media (pointer: fine) {
+  .author-avatar-group_mobile-button {
+    display: none !important;
+  }
+}
+
+.button_base {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  background: none;
+  transform: translateZ(0);
+}
+
+.reset_reset {
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button_content {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  padding: 0 6px;
+}
+
+.geist-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.link_link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.context-card_contextCardTrigger {
+  position: relative;
+  display: inline-block;
+}
+
+.context-card_contextCardRoot {
+  position: absolute;
+  bottom: calc(100% + 50px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.context-card_contextCardTrigger:hover .context-card_contextCardRoot {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.context-card_contextCardContent {
+  position: relative;
+  width: max-content;
+  padding: 12px;
+  background: hsla(0,0%,4%,1);
+  border: 1px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.context-card_contextCardContentVisibility {
+  opacity: 1;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name-role {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.inline-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-role-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.card-role {
+  font-size: 13px;
+  color: #888;
+}
+
+.card-tip {
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 10px;
+  overflow: visible;
+}
+
+.avatar-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 17px;
+  border-radius: 999px;
+  background: hsla(0, 0%, 12%, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  margin: 0 auto;
+}
+
+.avatar-container span {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.avatar-container:hover {
+  background: hsla(0, 0%, 15%, 1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.hover-card {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  margin-top: 0.5rem;
+}
+
+.context-card_contextCardTrigger:hover .hover-card {
+  display: block;
+}
+
+.avatar_avatar {
+  width: var(--size);
+  height: var(--size);
+  flex-shrink: 0;
+  border-radius: 100%;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 0;
+  vertical-align: top;
+  -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+  transition: background .2s ease;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.avatar_avatar img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image_intrinsic {
+  max-width: 100%;
+  height: auto;
+  color: transparent;
+}
+
+.avatar_avatar:after {
+  content: none;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Geist', sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.question-card {
+  cursor: pointer;
+  padding: 1rem;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.question-card:hover {
+  background: hsla(0,0%,10%,1);
+  border-color: #444;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Styles personnalisés pour la barre de défilement */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgb(243 244 246);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgb(156 163 175);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgb(107 114 128);
+}
